@@ -17,14 +17,14 @@ app.use(express.json());
 app.use(cors());
 
 const subscriber = new Redis(
-  "rediss://default:AVNS_Y2-hq77-Ya5c5pIbeQi@redis-34c7486f-azimcool06-d4f4.a.aivencloud.com:14449"
+  ""
 );
 
 const io = new Server({ cors: "*" });
 
 var config = {
-  CLUSTER: "arn:aws:ecs:ap-south-1:321924218941:cluster/build-cluster",
-  TASK: "arn:aws:ecs:ap-south-1:321924218941:task-definition/builder-task",
+  CLUSTER: "",
+  TASK: "",
   taskId: "",
 };
 
@@ -52,8 +52,8 @@ io.listen(SOCKET_PORT, () =>
 const ecsClient = new ECSClient({
   region: "ap-south-1",
   credentials: {
-    accessKeyId: "AKIAUV5BNYA6ZAOAEP75",
-    secretAccessKey: "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",
+    accessKeyId: "",
+    secretAccessKey: "",
   },
 });
 
@@ -71,11 +71,11 @@ app.post("/deploy", async (req, res) => {
         awsvpcConfiguration: {
           assignPublicIp: "ENABLED",
           subnets: [
-            "subnet-01085500a37729c9e",
-            "subnet-03f82afcf4d07fb66",
-            "subnet-08bcfe8398935ac21",
+            "",
+            "",
+            "",
           ],
-          securityGroups: ["sg-002dbb2f792fee9e2"],
+          securityGroups: [""],
         },
       },
       overrides: {

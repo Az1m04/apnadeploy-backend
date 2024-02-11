@@ -7,14 +7,14 @@ const Redis = require("ioredis");
 const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
 
 const publisher = new Redis(
-  "rediss://default:AVNS_Y2-hq77-Ya5c5pIbeQi@redis-34c7486f-azimcool06-d4f4.a.aivencloud.com:14449"
+  ""
 );
 
 const s3Client = new S3Client({
   region: "ap-south-1",
   credentials: {
-    accessKeyId: "AKIAUV5BNYA6ZAOAEP75",
-    secretAccessKey: "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",
+    accessKeyId: "",
+    secretAccessKey: "",
   },
 });
 
